@@ -24,8 +24,8 @@ import Plain from './Plain'
 import About from './About'
 import Manga from './Manga'
 import WebView from './webViewComponent'
-import Listen from './Listen'
-import History from './History'
+import Info from './Info'
+import Settings from './Settings'
 
 // export const Stack = createStackNavigator({
 //   ItemList: { screen: ItemList },
@@ -34,22 +34,22 @@ import History from './History'
 //   initialRouteName: 'ItemList'
 // })
 export const Stack1 = createStackNavigator({
-  Listen: { screen: Listen },
+  Info: { screen: Info },
   WebViewListen: { screen: WebView,
     defaultNavigationOptions: {
       headerBackTitle: null,
     } },
 }, {
-  initialRouteName: 'Listen',
+  initialRouteName: 'Info',
   backTitle : null
 }) 
 
 
 export const Stack2 = createStackNavigator({
-  History: { screen: History },
+  Settings: { screen: Settings },
   WebViewHistory: { screen: WebView },
 }, {
-  initialRouteName: 'History'
+  initialRouteName: 'Settings'
 })
 
 export const Stack3 = createStackNavigator({
@@ -66,10 +66,16 @@ export const Stack4 = createStackNavigator({
 })
 
 
+// export const Tabs = createBottomTabNavigator({
+//   TabA: { screen: TabA },
+//   TabB: { screen: TabB },
+//   TabC: { screen: Stack },
+// })
+
 export const Drawer = createDrawerNavigator({
-  SáchNói: { screen: Stack1 },
-  Truyện: { screen: Stack3 },
-  YêuThích : {screen: Stack2},
+  Thôngtin: { screen: Stack1 },
+  // Truyện: { screen: Stack3 },
+  ThiếtLập : {screen: Stack2},
   GiớiThiệu : {screen : Stack4 }
   // Tabs: { screen: Tabs },
   // Plain: { screen: Plain },
@@ -86,11 +92,6 @@ const AppNavigator = createStackNavigator({
   headerMode: 'none',
   header: null ,
   animationEnabled: true,
-  // navigationOptions: ({navigation}) => ({
-  //   headerStyle: {backgroundColor: 'green'},
-  //   title: 'Logged In to your app!',
-  //   headerLeft: <Text onPress={() => navigation.navigate('DrawerOpen')}>Menu</Text>
-  // })
 });
 
 export default createAppContainer(AppNavigator);

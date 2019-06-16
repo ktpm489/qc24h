@@ -15,7 +15,7 @@ import {
 
 import {
   storeData, getData
-} from '../src/utils/storage'
+} from './utils/storage'
 
 import Menu, { MenuItem, MenuDivider, Position } from "react-native-enhanced-popup-menu";
 
@@ -76,7 +76,7 @@ class ItemList extends Component {
   
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: 'Danh sách yêu thích',
+      headerTitle: 'Thiết lập',
       headerTitleStyle: { textAlign: 'center', alignSelf: 'center', flex: 1 },
       headerLeft: (
         <Button
@@ -204,8 +204,8 @@ class ItemList extends Component {
       <Menu
             ref={this.setMenuRef}
              >
-            <MenuItem onPress={this.onPressSave}>Thêm  Link</MenuItem>
-            <MenuItem onPress={this.onPressShare}>Xóa Tất cả</MenuItem>
+            <MenuItem onPress={this.onPressSave}>Thêm</MenuItem>
+            <MenuItem onPress={this.onPressShare}>Xóa</MenuItem>
           {/****
              <MenuItem onPress={this.hideMenu}>Item 3</MenuItem>
              <MenuItem onPress={this.hideMenu}>Item 4</MenuItem>

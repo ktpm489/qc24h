@@ -14,7 +14,7 @@ class ItemList extends Component {
 
     static navigationOptions = ({ navigation}) => {
       return {
-      headerTitle: 'Nghe Sách Nói',
+      headerTitle: 'Thông tin',
       headerTitleStyle: { textAlign: 'center', alignSelf: 'center', flex: 1 },
         headerLeft: (
           <Button

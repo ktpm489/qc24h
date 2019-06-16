@@ -12,13 +12,6 @@ import { Dimensions } from "react-native";
 var width = Dimensions.get('window').width; //full width
 var height = Dimensions.get('window').height;
 
-const items = [
-  { name: 'one'},
-  { name: 'two'},
-  { name: 'three'},
-  { name: 'four'},
-]
-
 // https://reactnavigation.org/docs/en/header-buttons.html
 class ItemList extends Component {
 
@@ -37,33 +30,11 @@ class ItemList extends Component {
       }
   }
   
-  renderItem = (item, i) => {
-    return (
-      <TouchableOpacity
-        key={i}
-        style={styles.item}
-        onPress={() => this.props.navigation.navigate('Item', { title: item.name })}
-      >
-        <Text style={styles.itemText}>{item.name}</Text>
-      </TouchableOpacity>)
-  }
-
+  
   render () {
     return (
       <View style={styles.container}>
-      {/***
-        <Text style={styles.text}>I'm a StackNavigator!</Text>
-      **/}
-        <View style={styles.currentContainer}>
-        <TouchableOpacity style={{ backgroundColor : 'red', marginLeft : 0}} 
-        onPress={() => this.props.navigation.openDrawer()}
-        >
-           <Text  style={[styles.itemText]}>Danh sách</Text>
-          </TouchableOpacity>
-          <Text  style={[styles.itemText, { marginLeft: 15 }]}>Giới thiệu</Text>
-          <Text style={[styles.itemText, { opacity : 0}]}>Trở lại</Text>
-        </View>
-        {items.map(this.renderItem)}
+        <Text style={styles.text}> Ứng dụng quản lý thông tin QC 24h</Text>
       </View>
       )
   }
