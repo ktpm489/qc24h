@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import demo from '../listen.json'
 import Modal from 'react-native-modal';
 import { withNavigationFocus } from 'react-navigation';
 import {

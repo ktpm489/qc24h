@@ -7,7 +7,7 @@ import {
   Button,
   FlatList
 } from 'react-native'
-import demo from '../listen.json'
+import data from '../infodata.json'
 
 // https://reactnavigation.org/docs/en/header-buttons.html
 class ItemList extends Component {
@@ -32,9 +32,17 @@ class ItemList extends Component {
       <TouchableOpacity
         key={i}
         style={styles.item}
-        onPress={() => this.props.navigation.navigate('WebViewListen', { link : item.link , title : item.name })}
+        // onPress={() => this.props.navigation.navigate('WebViewListen', { link : item.link , title : item.name })}
       >
-        <Text style={styles.itemText}>{item.name}</Text>
+        <View style={styles.containerItem}>
+        <Text style={styles.itemText}>{'Quãng đường đi'}</Text>
+        <Text style={styles.itemText}>{item.distance  + ' km'}</Text>
+        </View> 
+        <View style={styles.containerItem}>
+        <Text style={styles.itemText}>{'Ngày'}</Text>
+        <Text style={styles.itemText}>{item.date}</Text>
+        </View> 
+      
       </TouchableOpacity>)
   }
 
@@ -43,7 +51,7 @@ class ItemList extends Component {
       <View style={styles.container}>
       <FlatList
       style={{ width: '100%' }}
-      data={demo}
+      data={data}
       keyExtractor={this._keyExtractor}
       renderItem={this.renderItem}
     />
@@ -73,5 +81,11 @@ const styles = StyleSheet.create({
   itemText: {
     color: 'white',
     fontSize: 20,
+  },
+  containerItem : {
+    display : 'flex',
+    justifyContent : 'space-between',
+    alignItems : 'center',
+    flexDirection : 'row'    
   }
 })
